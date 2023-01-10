@@ -1,0 +1,24 @@
+views.
+from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+# from rest_framework.decorators import api_view,authentication_classes,permission_classes
+from.models import abc
+from.models import abc
+from .serializers import priti
+# from rest_framework.authentication import BasicAuthentication,
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.permissions import IsAuthenticated,IsAuthenticatedOrReadOnly,DjangoModelPermissions
+# from rest_framework.pagination import PageNumberPagination
+from .pageniation import Pagenumbr
+class Employset(ModelViewSet):
+    queryset=abc.objects.all()
+    serializer_class = priti
+    # authentication_classes=[BasicAuthentication]
+    authentication_classes=[SessionAuthentication]
+    # permission_classes=[IsAuthenticated]
+    # permission_classes = [IsAuthenticatedOrReadOnly] ##auth user asel tar edit karta ayto nasehl&unauth asel only read
+    pagination_class = Pagenumbr
+    permission_classes=[DjangoModelPermissions ]
+
+#
+
