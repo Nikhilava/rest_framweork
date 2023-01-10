@@ -19,6 +19,7 @@ class Employset(ModelViewSet):
     # permission_classes = [IsAuthenticatedOrReadOnly] ##auth user asel tar edit karta ayto nasehl&unauth asel only read
     pagination_class = Pagenumbr
     permission_classes=[DjangoModelPermissions ]
+    
 
 #
 
